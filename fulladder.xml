@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<cell name="fulladder">
+    <terms>
+        <term name="a" direction="In"/>
+        <term name="b" direction="In"/>
+        <term name="cin" direction="In"/>
+        <term name="sout" direction="Out"/>
+        <term name="cout" direction="Out/">
+    </terms>
+    <instances>
+        <instance name="ha1" mastercell="halfadder" x="0" y="0"/>
+        <instance name="ha2" mastercell="halfadder" x="0" y="0"/>
+        <instance name="or2_1" mastercell="or2" x="0" y="0"/>
+    </instances>
+    <nets>
+        <net name="a" type="External"/>
+            <node term="a" id="0" x="0" y="0"/>
+            <node term="a" instance="ha1" id="1" x="0" y="0"/>
+        </net>
+        <net name="b" type="External"/>
+            <node term="b" id="0" x="0" y="0"/>
+            <node term="b" instance="ha1" id="1" x="0" y="0"/>
+        </net>
+        <net name="cin" type="External"/>
+            <node term="cin" id="0" x="0" y="0"/>
+            <node term="a" instance="ha2" id="1" x="0" y="0"/>
+        </net>
+        <net name="sout_1" type="External"/>
+            <node term="sout" instance="ha1" id="0" x="0" y="0"/>
+            <node term="b" instance="ha2" id="1" x="0" y="0"/>
+        </net>
+        <net name="carry_1" type="External"/>
+            <node term="cout" instance="ha1" id="0" x="0" y="0"/>
+            <node term="i1" instance="or2_1" id="1" x="0" y="0"/>
+        </net>
+        <net name="carry_2" type="External"/>
+            <node term="cout" instance="ha2" id="0" x="0" y="0"/>
+            <node term="i0" instance="or2_1" id="1" x="0" y="0"/>
+        </net>
+        <net name="cout" type="External"/>
+            <node term="q" instance="or2_1" id="0" x="0" y="0"/>
+            <node term="cout" id="1" x="0" y="0"/>
+        </net>
+        <net name="sout" type="External"/>
+            <node term="sout" instance="ha2" id="0" x="0" y="0"/>
+            <node term="sout" id="1" x="0" y="0"/>
+        </net>
+    </nets>
+</cell>
